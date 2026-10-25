@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sleep Health Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Sleep Health Prediction</h1>
+        <p>AI-based prediction using health and lifestyle factors</p>
+    </div>
+
+    <form action="/predict" method="POST">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" name="age" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Occupation</label>
+                <select name="occupation" required>
+                    <option value="Accountant">Accountant</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="Lawyer">Lawyer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Nurse">Nurse</option>
+                    <option value="Sales Representative">Sales Representative</option>
+                    <option value="Salesperson">Salesperson</option>
+                    <option value="Scientist">Scientist</option>
+                    <option value="Software Engineer">Software Engineer</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Sleep Duration (hours)</label>
+                <input type="number" step="0.1" name="sleep_duration" required>
+            </div>
+
+            <div class="form-group">
+                <label>Quality of Sleep (1–10)</label>
+                <input type="number" min="1" max="10" name="quality_sleep" required>
+            </div>
+
+            <div class="form-group">
+                <label>Physical Activity Level</label>
+                <input type="number" name="physical_activity" required>
+            </div>
+
+            <div class="form-group">
+                <label>Stress Level (1–10)</label>
+                <input type="number" min="1" max="10" name="stress_level" required>
+            </div>
+
+            <div class="form-group">
+                <label>BMI Category</label>
+                <select name="bmi_category" required>
+                    <option value="Normal">Normal</option>
+                    <option value="Normal Weight">Normal Weight</option>
+                    <option value="Overweight">Overweight</option>
+                    <option value="Obese">Obese</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Heart Rate</label>
+                <input type="number" name="heart_rate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Daily Steps</label>
+                <input type="number" name="daily_steps" required>
+            </div>
+
+            <div class="form-group">
+                <label>Systolic Blood Pressure</label>
+                <input type="number" name="systolic" required>
+            </div>
+
+            <div class="form-group">
+                <label>Diastolic Blood Pressure</label>
+                <input type="number" name="diastolic" required>
+            </div>
+
+        </div>
+
+        <button type="submit">Predict Sleep Health</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
